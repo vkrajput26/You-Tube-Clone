@@ -61,3 +61,44 @@ let playvideo=(video)=>{
    
    picture-in-picture" allowfullscreen></iframe>
 */
+
+
+let url2="https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=trendinginindia&key=AIzaSyBwkuulJfyYNL3Cx4SPc2gEv42czXRgh1U"
+
+fetch(url2).then((res)=>{
+    return res.json()
+})
+.then((res)=>{
+  console.log(res.items)
+  display(res.items)
+})
+
+
+//append
+let mainbox=document.getElementById("displayMovie")
+ display=(displaydata)=>{
+
+    displaydata.forEach(({id:{videoId},snippet:{title,thumbnails}})=>{
+        console.log(videoId,title)
+
+        let box=document.createElement("div")
+
+        let iframe=document.createElement("iframe")
+        iframe.src=`https://www.youtube.com/embed/${videoId}`
+        iframe.allow="fullscreen"
+        let h2=document.createElement("h3")
+        h2.innerText=title;
+
+        box.append(iframe,h2)
+        mainbox.append(box)
+    })
+}
+// try{
+//     let url2="https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=trendinginindia&key=AIzaSyBwkuulJfyYNL3Cx4SPc2gEv42czXRgh1U"
+//     let res=await fetch(url2)
+//     let displaydata=await res.json()
+//     console.log(displaydata)
+// }
+// catch(err){
+//     console.log(err)
+// }
