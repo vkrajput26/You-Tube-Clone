@@ -1,5 +1,6 @@
 //https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=thor&key=[YOUR_API_KEY
 //https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${query}&key=${api_key
+//trending=https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=trendinginindia&key=AIzaSyBwkuulJfyYNL3Cx4SPc2gEv42czXRgh1U
 const api_key=" AIzaSyBwkuulJfyYNL3Cx4SPc2gEv42czXRgh1U";
 
 let searchv=async()=>{
