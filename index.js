@@ -21,6 +21,7 @@ let append=(data)=>{
 let x=document.getElementById("result")
 console.log(data)
 
+mainbox.innerHTML=null
 
 data.forEach(({id:{videoId},snippet:{title,thumbnails}})=>{
     console.log(videoId,title)
@@ -72,12 +73,15 @@ fetch(url2).then((res)=>{
   console.log(res.items)
   display(res.items)
 })
+.catch((err)=>{
+    console.log(err)
+})
 
 
 //append
 let mainbox=document.getElementById("displayMovie")
  display=(displaydata)=>{
-
+        console.log(displaydata)
     displaydata.forEach(({id:{videoId},snippet:{title,thumbnails}})=>{
         console.log(videoId,title)
 
